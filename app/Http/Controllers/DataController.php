@@ -12,6 +12,11 @@ class DataController extends Controller
         $datas = Admin::get();
         return view('data-admin',compact('datas'))->with('i', (request()->input('page', 1) - 1) * 5);;
     }
+    public function getDataDash()
+    {
+        $datas = Admin::get();
+        return view('dashboard',compact('datas'))->with('i', (request()->input('page', 1) - 1) * 5);;
+    }
     public function deleteData(Admin $id) 
     {
         $id->delete();
