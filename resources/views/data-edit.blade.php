@@ -20,6 +20,21 @@
                             <input type="text" name="name" value="{{ $data->name }}" class="form-control" placeholder="Name">
                         </div>
                     </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Role:</strong>
+                            <select class="form-select" name="role" aria-label="Default select example">
+                                @if($data->role == 'user')
+                                <option selected disabled>User</option>
+                                @else
+                                <option selected disabled>Pembelian</option>
+                                @endif
+                                <option value="pembelian">Pembelian</option>
+                                <option value="user">User</option>
+                              </select>
+                        </div>
+                    </div>
                     {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Kelas:</strong>

@@ -5,13 +5,15 @@
         <tr>
             <th>No</th>
             <th>Name</th>
+            <th>Role</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($datas as $student)
         <tr>
-            @if($student->role == 'user')
+            @if($student->role != 'admin')
             <td>{{ ++$i }}</td>
             <td>{{ $student->name }}</td>
+            <td>{{ $student->role }}</td>
             <td>
                 <form action="{{ route('destroy',$student->id) }}" method="POST">
     

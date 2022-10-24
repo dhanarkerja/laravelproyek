@@ -32,6 +32,7 @@ class DataController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'role' => 'required'
         ]);
         $data = Admin::find($id);
         $data->update($request->all());
