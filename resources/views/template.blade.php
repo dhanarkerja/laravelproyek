@@ -136,16 +136,23 @@
         }
         // untuk delete atau destroy data
         function destroy(id) {
-            $.ajax({
-                type: "get",
-                url: "{{ url('admin/destroy-barang') }}"+'/'+ id,
-                data: "name=" + name,
-                success: function(data) {
-                    $(".btn-close").click();
-                    read()
-                }
-            });
+            if(confirm("Apakah anda ingin menghapus barang ?")== true) {
+                alert("Barang telah terhapus")
+                $.ajax({
+                    type: "get",
+                    url: "{{ url('admin/destroy-barang') }}"+'/'+ id,
+                    data: "name=" + name,
+                    success: function(data) {
+                        $(".btn-close").click();
+                        read()
+                    }
+                });
+                return true;
+            } else {
+                alert("Barang tidak jadi di hapus");
+                return false;
             }
+        }
     </script>
 
   </body>

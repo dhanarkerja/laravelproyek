@@ -1,4 +1,5 @@
 .scroll-barang {
     background-color: lightblue;
+    height: 50vh;
     overflow-y: scroll;
   }
