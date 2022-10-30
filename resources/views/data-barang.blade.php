@@ -4,7 +4,7 @@
   <div class="container mt-5">
     <div class="row d-flex justify-content-center">
         <div class="col-lg ">
-            <h1>TUTORIAL CRUD DENGAN JQUERY AJAX </h1>
+            <h1>Barang Terima</h1>
             <button class="btn btn-primary" onClick="create()">+ Tambah Product</button>
             <div id="read" class="mt-3"></div> {{-- id=read untuk menyambungkan halaman read --}}
         </div>
