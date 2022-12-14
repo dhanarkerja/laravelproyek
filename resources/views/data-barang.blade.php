@@ -5,6 +5,8 @@
     <div class="row d-flex justify-content-center">
         <div class="col-lg ">
             <h1>Barang Terima</h1>
+            <label for="gsearch">Search Barang:</label>
+            <input type="search" id="search" name="search" onkeyup="read()">
             <button class="btn btn-primary" onClick="create()">+ Tambah Product</button>
             <div id="read" class="mt-3"></div> {{-- id=read untuk menyambungkan halaman read --}}
         </div>

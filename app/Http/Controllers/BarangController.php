@@ -50,5 +50,12 @@ class BarangController extends Controller
         $data->delete();
     }
 
+    public function search($request)
+    {
+        $data = Barang::where('name','LIKE','%'.$request.'%')->get();
+        return view('data-barang-read')->with([
+            'data' => $data
+        ]);
+    }
 
 }

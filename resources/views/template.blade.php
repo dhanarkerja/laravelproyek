@@ -84,11 +84,18 @@
         $(document).ready(function() {
             read()
         });
-        // Read Database
+        // search barang dan read
         function read() {
-            $.get("{{ route('getBarang') }}", {}, function(data, status) {
-                $("#read").html(data);
-            });
+            var search = $("#search").val();
+            if(search == null || search == '') {
+                $.get("{{ route('getBarang') }}", {}, function(data, status) {
+                    $("#read").html(data);
+                });
+            } else {
+                $.get("{{ url('admin/search-barang') }}"+'/'+search, {}, function(data, status) {
+                    $("#read").html(data);
+                });
+            }
         }
         // modal create barang
         function create() {
