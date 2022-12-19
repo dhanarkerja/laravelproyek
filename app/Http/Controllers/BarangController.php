@@ -26,6 +26,7 @@ class BarangController extends Controller
     }
     public function store(Request $request)
     {
+
         $data['name'] = $request->name;
         $data['quantity'] = $request->quantity;
         $data['added_by'] = Auth::user()->name;
