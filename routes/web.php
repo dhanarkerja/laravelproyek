@@ -55,6 +55,9 @@ Route::group([
         Route::get('/create-barang',[BarangController::class,'create'])->name('createBarang');
         Route::get('/store-barang',[BarangController::class,'store'])->name('storeBarang');
 
+        Route::get('/search-barang/{search}',[BarangController::class,'search'])->name('searchBarang');
+
+
         Route::get('/show-barang/{id}',[BarangController::class,'show']);//contoh penggunaan url di template blade
         //sesuaikan uri di php artisan route:list bila menggunakan url
         //jangan sampai berbeda nanti bisa terjadi 404 not found
