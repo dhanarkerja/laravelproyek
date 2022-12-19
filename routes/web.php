@@ -54,6 +54,8 @@ Route::group([
         Route::get('/read-barang',[BarangController::class,'getData'])->name('getBarang');
         Route::get('/create-barang',[BarangController::class,'create'])->name('createBarang');
         Route::get('/store-barang',[BarangController::class,'store'])->name('storeBarang');
+        Route::get('/store-barang',[BarangController::class,'store'])->name('storeBarang');
+        Route::get('/search-barang/{search}',[BarangController::class,'search'])->name('searchBarang');
 
         Route::get('/search-barang/{search}',[BarangController::class,'search'])->name('searchBarang');
 

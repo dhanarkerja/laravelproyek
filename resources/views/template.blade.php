@@ -97,6 +97,15 @@
                 });
             }
         }
+        function addinputfield(){
+    
+            var more_fields = 
+                `<div class="form-group">
+                    <input type="text" name="name[]" id="name" class="form-control" placeholder="name product">
+                    <input type="number" name="quantity[]" id="quantity" class="form-control" placeholder="quantity">
+                </div>`;
+            $(".input-fields").append(more_fields);
+        }
         // modal create barang
         function create() {
             $.get("{{  route('createBarang') }}", {}, function(data, status) {
@@ -107,17 +116,27 @@
         }
           // untuk proses create data
         function store() {
-            var name = $("#name").val();
-            var quantity = $("#quantity").val();
-            $.ajax({
+            var name = []
+            $("input[name^='name']").each(function () {
+                    name.push($(this).val())
+            });
+            var quantity = []
+            $("input[name^='quantity']").each(function () {
+                    quantity.push($(this).val())
+            });
+            for (i = 0; i < name.length; ++i) {
+                $.ajax({
                 type: "get",
                 url: "{{ route('storeBarang') }}",
-                data: { 'name': name, 'quantity':quantity},
-                success: function(data) {
-                    $(".btn-close").click();
-                    read()
-                }
-            });
+                data: { 'name': name[i], 'quantity':quantity[i]},
+                    success: function(data) {
+                        console.log(name[i])
+                        console.log(quantity[i])
+                    }
+                });
+            }
+            $(".btn-close").click();
+            read();
         }
         // menampilkan modal
         function show(id) {
